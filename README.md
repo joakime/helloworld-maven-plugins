@@ -8,7 +8,7 @@ hello-oldworld-maven-plugin
 
 Implements the ":info" goal.
 
-This build uses the by convention techniques of building out a maven plugin based on defaults cooked into maven already.  The <packaging>maven-plugin</packaging> is a clue to maven itself on how to build out this project.  It will run (on maven 3.1.1 that i tested with) the following plugins (in this order) with the provided goals of "clean install"
+This build uses the by convention techniques of building out a maven plugin based on defaults cooked into maven already.  The `<packaging>maven-plugin</packaging>` is a hint to maven itself on how to build out this project.  It will run (on maven 3.1.1 that i tested with) the following plugins (in this order) with the provided goals of `clean install`
 
   * maven-clean-plugin:2.5:clean
   * maven-plugin-plugin:3.2:descriptor
@@ -22,11 +22,11 @@ This build uses the by convention techniques of building out a maven plugin base
   * maven-install-plugin:2.4:install
 
 Where did this list come from?
-Well, its part of the Maven [https://github.com/apache/maven/blob/maven-3.1.1/maven-core/src/main/resources/META-INF/plexus/default-bindings.xml#L184-L230](default bindings for 'maven-plugin')
+Well, its part of the Maven [default bindings for `maven-plugin`](https://github.com/apache/maven/blob/maven-3.1.1/maven-core/src/main/resources/META-INF/plexus/default-bindings.xml#L184-L230)
 
 This project uses the old-school javadoc notations for defining the mojo. (while it appears to be javadoc / doclet related, it does not use the doclet approach to get that information out)
 
-The end result of this build is a jar file, with the appropriate xml descriptors for the plugin ('META-INF/maven/plugin.xml') built-out from the javadoc notations.
+The end result of this build is a jar file, with the appropriate xml descriptors for the plugin (`META-INF/maven/plugin.xml`) built-out from the javadoc notations.
 
 To build:
 
@@ -47,11 +47,11 @@ To demonstrate plugin configuration:
 hello-world-maven-plugin
 ------------------------
 
-This also implements the ":info" goal.
+This also implements the `:info` goal.
 
-However, it uses the 'maven-plugin-annotations' (eg: @Mojo, @Component, @Parameter) to set itself up, along with some extra maven plugins to build out some extra goodies (such as the HelpMojo for commandline help on your plugin)
+However, it uses the `maven-plugin-annotations` (eg: `@Mojo`, `@Component`, `@Parameter`) to set itself up, along with some extra maven plugins to build out some extra goodies (such as the `HelpMojo` for commandline help on your plugin)
 
-End result is the same, a jar file with the plugin descriptor built-out ('META-INF/maven/plugin.xml')
+End result is the same, a jar file with the plugin descriptor built-out (`META-INF/maven/plugin.xml`)
 
 To build:
 
