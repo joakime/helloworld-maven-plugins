@@ -8,7 +8,7 @@ hello-oldworld-maven-plugin
 
 Implements the ":info" goal.
 
-This build uses the by convention techniques of building out a maven plugin based on defaults cooked into maven already.  The `<packaging>maven-plugin</packaging>` is a hint to maven itself on how to build out this project.  It will run (on maven 3.1.1 that i tested with) the following plugins (in this order) with the provided goals of `clean install`
+This build uses the by convention techniques of building out a maven plugin based on defaults cooked into maven already.  The `<packaging>maven-plugin</packaging>` is a hint to maven itself on how to build out this project.  It will run (on maven 3.2.2 that i tested with) the following plugins (in this order) with the provided goals of `clean install`
 
   * maven-clean-plugin:2.5:clean
   * maven-plugin-plugin:3.2:descriptor
@@ -22,7 +22,7 @@ This build uses the by convention techniques of building out a maven plugin base
   * maven-install-plugin:2.4:install
 
 Where did this list come from?
-Well, its part of the Maven [default bindings for `maven-plugin`](https://github.com/apache/maven/blob/maven-3.1.1/maven-core/src/main/resources/META-INF/plexus/default-bindings.xml#L184-L230)
+Well, its part of the Maven [default bindings for `maven-plugin`](https://github.com/apache/maven/blob/maven-3.2.2/maven-core/src/main/resources/META-INF/plexus/default-bindings.xml#L184-L230)
 
 This project uses the old-school javadoc notations for defining the mojo. (while it appears to be javadoc / doclet related, it does not use the doclet approach to get that information out)
 
