@@ -15,6 +15,7 @@
       <artifactId>maven-plugin-api</artifactId>
       <version>3.2.1</version>
     </dependency>
+    <!-- for @Mojo annotations -->
     <dependency>
       <groupId>org.apache.maven.plugin-tools</groupId>
       <artifactId>maven-plugin-annotations</artifactId>
